@@ -1,0 +1,35 @@
+import time
+import cv2
+import numpy as np
+img = cv2.imread('apple.jpg')
+near_img = cv2.resize(img,None, fx = 20, fy = 20, interpolation = cv2.INTER_NEAREST)
+bilinear_img = cv2.resize(img,None, fx = 20, fy = 20, interpolation = cv2.INTER_LINEAR)
+bicubic_img = cv2.resize(img,None, fx = 20, fy = 20, interpolation = cv2.INTER_CUBIC)
+cv2.imshow('Near',near_img)
+cv2.imshow('bilinear',bilinear_img)
+cv2.imshow('bicubic',bicubic_img)
+#cv2.imshow('original',img)
+print("--------------------------------------")
+print(" Type         Height         Width ")
+print("______________________________________")
+print("Original ","-----",img.shape[0],"-----------",img.shape[1])
+#print("Height=",img.shape[0])    
+#print("Width=",img.shape[1])  
+print("______________________________________")
+print("Near-N ","-------",near_img.shape[0],"---------",near_img.shape[1])
+#print("Height=",near_img.shape[0])    
+#print("Width=",near_img.shape[1])  
+print("______________________________________")
+print("Bilinear ","-----",bilinear_img.shape[0],"---------",bilinear_img.shape[1])
+#print("Height=",bilinear_img.shape[0])    
+#print("Width=",bilinear_img.shape[1])  
+print("______________________________________")
+print("Cubic ","-------",near_img.shape[0],"----------",near_img.shape[1])
+#print("Height=",bicubic_img.shape[0])    
+#print("Width=",bicubic_img.shape[1]) 
+print("______________________________________")
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+ 
